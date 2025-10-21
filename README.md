@@ -1,16 +1,27 @@
-## Hi there 👋
+## Hello, Again!
 
-<!--
-**renantomazini-ufpb/renantomazini-ufpb** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This is my professional account! It's for my work at the Federal University of Paraíba.
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### If you need, you can find me at:
+
+<a href="https://rtomazini42.github.io/">
+  <code><img alt="My linkedin" width="32" src="https://images.icon-icons.com/201/PNG/512/orkut_512_24352.png" /></code>
+</a>
+
+<a href="mailto:renantomazini@sti.ufpb.br">
+  <code><img alt="My e-mail" width="32" src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png" /></code>
+</a>
+
+<a href="mailto:renantomazini@sti.ufpb.br">
+  <code><img alt="My e-mail" width="32" src="https://maps.app.goo.gl/sRqmCoBxpi29D2tP7" /></code>
+</a>
+
+
+### The technologies I’m working with here, in addition to offering support, include:
+
+![Descrição adicional opcional](https://img.shields.io/badge/-Python-ff0000?logo=python&logoColor=ffffff&style=flat)
+![Descrição adicional opcional](https://img.shields.io/badge/-Flask-ff0000?logo=flask&logoColor=ffffff&style=flat)
+![Descrição adicional opcional](https://img.shields.io/badge/-PostgreSQL-ff0000?logo=postgresql&logoColor=ffffff&style=flat)
+
+
