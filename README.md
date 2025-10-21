@@ -2,7 +2,7 @@
 
 This is my professional account! It's for my work at the Federal University of Paraíba.
 
-<a href="https://rtomazini42.github.io/">
+<a href="https://www.ufpb.br/">
   <img alt="My work place" width="128" src="images/logo.png" />
 </a>
 
