@@ -2,6 +2,10 @@
 
 This is my professional account! It's for my work at the Federal University of Paraíba.
 
+<a href="https://rtomazini42.github.io/">
+  <code><img alt="My linkedin" width="128" src="images/logo.png" /></code>
+</a>
+
 
 ### If you need, you can find me at:
 
