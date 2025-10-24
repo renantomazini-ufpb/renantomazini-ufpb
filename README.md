@@ -21,6 +21,7 @@ This is my professional account! It's for my work at the Federal University of P
   <code><img alt="My local" width="32" src="https://images.icon-icons.com/1880/PNG/512/iconfinder-place-4341312_120536.png" /></code>
 </a>
 
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=renantomazini-ufpb&hide=javascript,html,css,jupyter%20notebook&theme=blue_navy&hide_border=true)](https://github.com/renantomazini-ufpb/github-readme-stats)
 
 ### The technologies I’m working with here, in addition to offering support, include:
 ![Descrição adicional opcional](https://img.shields.io/badge/-Python-ff0000?logo=python&logoColor=ffffff&style=flat)
