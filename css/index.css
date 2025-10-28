@@ -1,0 +1,175 @@
+/* Roubei otro tema */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --accent: #00aaff;
+    --text: #e4e8f0;
+    --radius: 18px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --blur: 14px;
+    --spacing: 1.5rem;
+    --card-gap: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+body {
+   
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 71%, rgba(0, 74, 89, 1) 100%);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+/* ===== Layout ===== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ===== Colunas ===== */
+.esquerda, .direita {
+    backdrop-filter: blur(var(--blur));
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--spacing);
+}
+
+.esquerda {
+    flex: 1 1 280px;
+    max-width: 350px;
+    text-align: left;
+}
+
+.esquerda a{
+    text-decoration: underline;
+    color: #00aaff;
+    font-weight: 600;
+}
+
+.esquerda img{
+    margin-left: 11rem;
+    margin-top: 13rem;
+}
+
+
+.esquerda h2 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1.4rem;
+}
+
+.esquerda h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: #a9c6ff;
+}
+
+.direita {
+    flex: 1 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-gap);
+}
+
+/* ===== Cards ===== */
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(var(--blur));
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.25);
+}
+
+/* Cabeçalho */
+.card-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(0, 170, 255, 0.4);
+}
+
+/* Corpo */
+.card-body {
+    color: var(--text);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    margin: 0.2rem 0;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* ===== Animação de aparição ===== */
+.aparece {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .esquerda, .direita {
+        width: 100%;
+        max-width: none;
+    }
+}

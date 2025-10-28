@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Trabalho</title>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header><h1 class="text-center">Página Status do Trabalho</h1></header>
+    <div class="row justify-content-md-center">
+        <div class="esquerda col-3">
+            <h2>Renan Tomazini</h2>
+            <p>Técnico em Tecnologia da Informação</p>
+            <p>Centro Profissional e Tecnológico – Escola Técnica de Saúde</p>
+            <p>Superintendência de Tecnologia da Informação (STI)</p>
+            <h3>Universidade Federal da Paraíba – Campus I</h3>
+            <br>
+            <br>
+            <p>Links:</p>
+            <a href="https://github.com/renantomazini-ufpb">GITHUB</a><br>
+            <a href="https://www.linkedin.com/in/renan-tomazini/">Linkedin</a><br>
+            <a href="https://rtomazini42.github.io/">Site</a><br><br>
+            <img src="assets/figs/linux.svg" width="128px" style="filter: invert(100%);">
+            
+        </div>
+        <div class="direita col-7">
+            <div class="card border-primary mb-3">
+                <div class="card-header">Horas Trabalhadas</div>
+                <div class="card-body text-primary">
+                    <h3 class="card-title" id="horas_trabalhadas">Só funciona no JS</h3>
+                    <p class="card-text">Segunda á sexta, 8h por dia!</p>
+                </div>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-header">Dias Trabalhados</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title" id="dias_trabalhados">Ativa o JS</h5>
+                    <p class="card-text">Dias de trabalho desde 06/10/2025</p>
+                </div>
+            </div>
+            <div class="card border-primary mb-3"">
+                <div class="card-header">Litros de água bebidos</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title" id="agua">Não tem vírus</h5>
+                    <p class="card-text">Garrafinha de 750ml todos os dias</p>
+                </div>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-header">Energia gasta</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title" id="dinheiro">Eu juro</h5>
+                    <p class="card-text">Luz ligada, computador, ar...</p>
+                </div>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-header">Online no trabalho?</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title" id="online">js?</h5>
+                    <p class="card-text">Segunda-Sexta, das 8 ás 12, das 13 ás 17</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const inicio = new Date(2025, 9, 6); 
+    const hoje = new Date();
+
+    
+    function contarDiasUteis(inicio, fim) {
+        let count = 0;
+        const data = new Date(inicio);
+        while (data <= fim) {
+            const dia = data.getDay();
+            if (dia >= 1 && dia <= 5) count++;
+            data.setDate(data.getDate() + 1);
+        }
+        return count;
+    }
+
+    const diasTrabalhados = contarDiasUteis(inicio, hoje);
+    const horasTrabalhadas = diasTrabalhados * 8;
+    const litrosAgua = diasTrabalhados * 0.75; 
+    const energiaWatts = horasTrabalhadas * (80 + 500);
+    const energiaKWh = energiaWatts / 1000;
+
+
+    function animarContagem(elemento, valorFinal, duracao = 1200, sufixo = "") {
+        let inicio = 0;
+        const incremento = valorFinal / (duracao / 16); 
+        const contador = setInterval(() => {
+            inicio += incremento;
+            if (inicio >= valorFinal) {
+                inicio = valorFinal;
+                clearInterval(contador);
+                elemento.classList.add("aparece");
+
+            }
+            elemento.textContent = sufixo === "L" 
+                ? inicio.toFixed(2) + " L"
+                : sufixo === "h"
+                ? Math.floor(inicio) + " h"
+                : sufixo === "dias"
+                ? Math.floor(inicio) + " dias"
+                : sufixo === "kWh"
+                ? inicio.toFixed(1) + " kWh"
+                : inicio.toFixed(0);
+        }, 16);
+    }
+
+    const elDias = document.getElementById("dias_trabalhados");
+    const elHoras = document.getElementById("horas_trabalhadas");
+    const elAgua = document.getElementById("agua");
+    const elEnergia = document.getElementById("dinheiro");
+
+    animarContagem(elDias, diasTrabalhados, 1500, "dias");
+    animarContagem(elHoras, horasTrabalhadas, 1800, "h");
+    animarContagem(elAgua, litrosAgua, 1800, "L");
+    animarContagem(elEnergia, energiaKWh, 2000, "kWh");
+});
+</script>
+
+<script>
+function verificarStatusTrabalho() {
+    const agora = new Date();
+    const diaSemana = agora.getDay();
+    const hora = agora.getHours();
+    const minuto = agora.getMinutes();
+
+    const elemento = document.getElementById("online");
+
+    const diaUtil = diaSemana >= 1 && diaSemana <= 5;
+
+    const horarioManha = hora >= 8 && (hora < 12 || (hora === 12 && minuto === 0));
+    const horarioTarde = hora >= 13 && (hora < 17 || (hora === 17 && minuto === 0));
+    const emTrabalho = diaUtil && (horarioManha || horarioTarde);
+
+    if (emTrabalho) {
+        elemento.textContent = "🟢 Online no trabalho";
+        elemento.classList.remove("text-danger");
+        elemento.classList.add("text-success");
+    } else {
+        elemento.textContent = "🔴 Fora do expediente";
+        elemento.classList.remove("text-success");
+        elemento.classList.add("text-danger");
+    }
+}
+
+verificarStatusTrabalho();
+setInterval(verificarStatusTrabalho, 60000);
+</script>
+
+
+
+
+</body>
+</html>
